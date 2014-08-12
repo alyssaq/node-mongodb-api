@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "basic-auth": "0.0.1",
-    "body-parser": "1.4.3",
-    "compression": "1.0.8",
-    "cors": "2.3.1",
-    "express": "4.4.4",
-    "mongoose": "3.8.12",
-    "morgan": "1.1.1"
+    "body-parser": "1.6.3",
+    "compression": "1.0.11",
+    "cors": "2.4.1",
+    "express": "4.8.3",
+    "mongoose": "3.8.14",
+    "morgan": "1.2.2"
   },
   "devDependencies": {},
   "repository": {
