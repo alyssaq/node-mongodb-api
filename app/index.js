@@ -13,7 +13,7 @@ var app = express();
 var dbUrl = config.db.uri;
 
 app.use(bodyParser.json());
-app.use(morgan());
+app.use(morgan('combined'));
 app.use(compression());
 app.use(cors({
   origin: '*',
