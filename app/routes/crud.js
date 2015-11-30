@@ -5,9 +5,7 @@ const Crud = require('../models/crud')
  * curl -X POST -H "Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3M=" -d '{"msg":"Hello!"}' http://localhost:3000/crud -D-
  */
 function add (req, res) {
-  console.log(req.method, req.body)
-
-  Crud.create(req.body, function (err) {
+  Crud.create(req.body, (err) => {
     if (err) {
       console.log('Error on save!')
     } else {
@@ -33,7 +31,7 @@ function getByMsg (req, res) {
 function getAll (req, res) {
   Crud.find()
     .limit(req.query.limit)
-    .exec(function (err, data) {
+    .exec((err, data) => {
       if (err) return console.error(err)
       res.send(data)
     })

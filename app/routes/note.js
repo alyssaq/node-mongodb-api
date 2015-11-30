@@ -5,7 +5,7 @@ const Note = require('../models/note')
  * curl -X POST -H "Content-type: application/json" -H "Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3M=" -d '{"title":"sup", "data":[1,2]}' http://localhost:3000/note -D-
  */
 function add (req, res) {
-  Note.create(req.body, function (err) {
+  Note.create(req.body, (err) => {
     if (err) {
       console.error('Error on save!', err)
     } else {
@@ -17,9 +17,8 @@ function add (req, res) {
 }
 
 function get (req, res) {
-  console.log(req)
   Note.findOne({title: req.params.title})
-    .exec(function (err, notes) {
+    .exec((err, notes) => {
       if (err) return console.error(err)
       res.send(notes)
     })
