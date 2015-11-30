@@ -6,15 +6,17 @@
     "name": "Alyssa Quek"
   },
   "dependencies": {
-    "basic-auth": "0.0.1",
-    "body-parser": "1.6.3",
-    "compression": "1.0.11",
-    "cors": "2.4.1",
-    "express": "4.8.3",
-    "mongoose": "3.8.14",
-    "morgan": "1.2.2"
+    "basic-auth": "^1.0.3",
+    "body-parser": "^1.14.1",
+    "compression": "^1.6.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.8",
+    "morgan": "^1.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "^5.4.1"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/alyssaq/node-mongodb-api"
@@ -22,10 +24,11 @@
   "main": "app/index.js",
   "scripts": {
     "start": "node app/index.js",
+    "lint": "standard",
     "test": "exit 0"
   },
   "engines": {
-    "node": ">= 0.8.0"
+    "node": "5.0.0"
   },
   "license": "MIT",
   "bugs": {

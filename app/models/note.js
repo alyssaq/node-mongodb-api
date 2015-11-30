@@ -1,13 +1,12 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-var noteSchema = new mongoose.Schema({
-  group: Number,
-  type: String,
+const noteSchema = new mongoose.Schema({
+  title: String,
+  data: mongoose.Schema.Types.Mixed,
   updated: {
     type: Date,
     default: Date.now
-  },
-  data: mongoose.Schema.Types.Mixed,
-});
+  }
+})
 
-module.exports = mongoose.model('Note', noteSchema);
+module.exports = mongoose.model('Note', noteSchema)

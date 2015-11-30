@@ -1,24 +1,20 @@
-var mongoose = require('mongoose');
-
-function log () {
-  console.log.apply(this, Array.prototype.slice.call(arguments));
-}
+const mongoose = require('mongoose')
 
 function connect (dbUrl, cb) {
-  mongoose.connect(dbUrl);
+  mongoose.connect(dbUrl)
 
-  mongoose.connection.on('error', function (err) {
-    log('mongo connection error:', err);
-    mongoose.disconnect();
-    cb(err);
-  });
+  return new Promise((resolve, reject) => {
+    mongoose.connection.on('error', function (err) {
+      mongoose.disconnect()
+      reject(err)
+    })
 
-  mongoose.connection.on('open', function () {
-    log('mongo connection opened at:', dbUrl);
-    cb(null);
-  });
-};
+    mongoose.connection.on('open', function () {
+      resolve(dbUrl)
+    })
+  })
+}
 
 module.exports = {
   connect: connect
-};
+}
