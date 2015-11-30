@@ -21,7 +21,7 @@ function add (req, res) {
 /* Get cruds with matching string msg
  */
 function getByMsg (req, res) {
-  Crud.find({msg: { '$regex': req.params.msg, '$options' : 'i' }}, (err, data) => {
+  Crud.find({msg: { '$regex': req.params.msg, '$options': 'i' }}, (err, data) => {
     if (err) return console.error(err)
     res.send(data)
   })
