@@ -21,7 +21,7 @@ Supports either a locally-running MongoDB or MongoDB as-a-service
 1. Comment out the specified lines in `app/index.js` to populate your database with a `crud` table with the sample json data in `data/crud.json`
 
 2. Run `npm start` and verify that tables have been populated with:
-`curl localhost3000/note/
+`curl localhost3000/cruds?limit=2`
 
 ## Specify MongoDB Settings
 You may connect to [MongoLab](https://mongolab.com/), [Compose MongoDB](https://www.compose.io/mongodb/) or a locally-running [MongoDB](http://docs.mongodb.org/manual/tutorial/getting-started-with-the-mongo-shell/)
